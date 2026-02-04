@@ -224,5 +224,131 @@
     "edit": "Edit",
     "viewMore": "Lihat Lebih Banyak",
     "selectLanguage": "Bahasa"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Lengkapi pesananmu dengan mengisi detail di bawah ini",
+    "shippingInfo": "Informasi Pengiriman",
+    "paymentMethod": "Metode Pembayaran",
+    "orderReview": "Ringkasan Pesanan",
+    "fields": {
+      "fullName": "Nama Lengkap",
+      "fullNamePlaceholder": "Masukkan nama lengkap",
+      "email": "Alamat Email",
+      "emailPlaceholder": "nama@email.com",
+      "phone": "Nomor Telepon",
+      "phonePlaceholder": "081234567890",
+      "address": "Alamat Lengkap",
+      "addressPlaceholder": "Masukkan alamat lengkap",
+      "city": "Kota",
+      "cityPlaceholder": "Masukkan kota",
+      "province": "Provinsi",
+      "provincePlaceholder": "Pilih provinsi",
+      "postalCode": "Kode Pos",
+      "postalCodePlaceholder": "12345",
+      "notes": "Catatan Pesanan (Opsional)",
+      "notesPlaceholder": "Instruksi khusus untuk pesananmu..."
+    },
+    "payment": {
+      "bankTransfer": "Transfer Bank",
+      "bankTransferDesc": "Transfer manual ke rekening kami",
+      "cod": "Bayar di Tempat (COD)",
+      "codDesc": "Bayar saat pesanan tiba",
+      "ewallet": "E-Wallet",
+      "ewalletDesc": "GoPay, OVO, DANA, dll."
+    },
+    "summary": {
+      "title": "Ringkasan Pesanan",
+      "subtotal": "Subtotal",
+      "shipping": "Ongkir",
+      "total": "Total",
+      "free": "Gratis"
+    },
+    "placeOrder": "Buat Pesanan",
+    "processing": "Memproses...",
+    "backToCart": "Kembali ke Keranjang",
+    "agreeTerms": "Saya setuju dengan Syarat & Ketentuan",
+    "errors": {
+      "nameMin": "Nama minimal 2 karakter",
+      "emailInvalid": "Masukkan email yang valid",
+      "phoneMin": "Masukkan nomor telepon yang valid",
+      "addressMin": "Masukkan alamat lengkap",
+      "cityRequired": "Kota wajib diisi",
+      "provinceRequired": "Provinsi wajib diisi",
+      "postalCodeRequired": "Kode pos wajib diisi",
+      "paymentRequired": "Pilih metode pembayaran",
+      "termsRequired": "Kamu harus menyetujui syarat dan ketentuan"
+    }
+  },
+  "thankYou": {
+    "title": "Terima Kasih!",
+    "subtitle": "Pesananmu berhasil dibuat",
+    "orderNumber": "Nomor Pesanan",
+    "orderDate": "Tanggal Pesanan",
+    "estimatedDelivery": "Estimasi Pengiriman",
+    "daysFromNow": "7-14 hari dari sekarang",
+    "whatNext": "Langkah Selanjutnya?",
+    "step1": {
+      "title": "Konfirmasi Pesanan",
+      "description": "Kamu akan menerima email konfirmasi segera"
+    },
+    "step2": {
+      "title": "Produksi",
+      "description": "Kami akan mulai membuat kaos custommu"
+    },
+    "step3": {
+      "title": "Pengiriman",
+      "description": "Pesananmu akan dikirim setelah selesai"
+    },
+    "step4": {
+      "title": "Pengantaran",
+      "description": "Terima produk Kaos EUY! kerenmu"
+    },
+    "needHelp": "Butuh Bantuan?",
+    "contactUs": "Hubungi kami via WhatsApp untuk pertanyaan",
+    "whatsappButton": "Chat di WhatsApp",
+    "continueShopping": "Lanjut Belanja",
+    "viewOrders": "Lihat Pesananku"
+  },
+  "fileUpload": {
+    "title": "Unggah Desainmu",
+    "subtitle": "Seret dan lepas file di sini, atau klik untuk mencari",
+    "supportedFormats": "Format yang didukung: PNG, JPG, PDF, AI, PSD",
+    "maxSize": "Ukuran maksimal: 10MB",
+    "uploading": "Mengunggah...",
+    "uploadSuccess": "File berhasil diunggah!",
+    "uploadError": "Gagal mengunggah. Silakan coba lagi.",
+    "removeFile": "Hapus",
+    "changeFile": "Ganti File",
+    "preview": "Pratinjau",
+    "noFile": "Tidak ada file dipilih",
+    "dragActive": "Lepas file di sini...",
+    "browse": "Cari File"
+  },
+  "bulkOrder": {
+    "title": "Pesanan Grosir",
+    "subtitle": "Isi form di bawah untuk pesanan grosir (10+ pcs)",
+    "companyInfo": "Informasi Perusahaan/Organisasi",
+    "contactInfo": "Kontak Person",
+    "orderDetails": "Detail Pesanan",
+    "fields": {
+      "companyName": "Nama Perusahaan/Organisasi",
+      "companyNamePlaceholder": "Masukkan nama perusahaan atau organisasi",
+      "contactName": "Nama Kontak Person",
+      "contactNamePlaceholder": "Masukkan nama kontak person",
+      "email": "Email",
+      "emailPlaceholder": "perusahaan@email.com",
+      "phone": "Telepon/WhatsApp",
+      "phonePlaceholder": "081234567890",
+      "quantity": "Total Jumlah",
+      "quantityPlaceholder": "Minimal 10 pcs",
+      "deadline": "Deadline",
+      "deadlinePlaceholder": "Kapan dibutuhkan?",
+      "description": "Deskripsi Proyek",
+      "descriptionPlaceholder": "Jelaskan proyekmu: tujuan, ide desain, distribusi ukuran, dll."
+    },
+    "submitButton": "Kirim Permintaan",
+    "submitting": "Mengirim...",
+    "footerNote": "Tim kami akan menghubungimu dalam 24 jam dengan penawaran khusus"
   }
 }

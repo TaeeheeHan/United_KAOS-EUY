@@ -184,14 +184,16 @@ export default function CartPage() {
               </div>
 
               {/* Checkout Button */}
-              <Button
-                variant="primary"
-                size="lg"
-                fullWidth
-                disabled={selectedItems.size === 0}
-              >
-                {t('cart.checkout')} ({formatIDR(grandTotal)})
-              </Button>
+              <Link href="/checkout">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  disabled={selectedItems.size === 0}
+                >
+                  {t('cart.checkout')} ({formatIDR(grandTotal)})
+                </Button>
+              </Link>
 
               {/* Continue Shopping */}
               <Link href="/products">

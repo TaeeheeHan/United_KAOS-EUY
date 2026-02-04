@@ -224,5 +224,131 @@
     "edit": "Edit",
     "viewMore": "View More",
     "selectLanguage": "Language"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "subtitle": "Complete your order by filling in the details below",
+    "shippingInfo": "Shipping Information",
+    "paymentMethod": "Payment Method",
+    "orderReview": "Order Review",
+    "fields": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "name@email.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "081234567890",
+      "address": "Street Address",
+      "addressPlaceholder": "Enter your complete address",
+      "city": "City",
+      "cityPlaceholder": "Enter your city",
+      "province": "Province",
+      "provincePlaceholder": "Select province",
+      "postalCode": "Postal Code",
+      "postalCodePlaceholder": "12345",
+      "notes": "Order Notes (Optional)",
+      "notesPlaceholder": "Any special instructions for your order..."
+    },
+    "payment": {
+      "bankTransfer": "Bank Transfer",
+      "bankTransferDesc": "Manual transfer to our bank account",
+      "cod": "Cash on Delivery",
+      "codDesc": "Pay when your order arrives",
+      "ewallet": "E-Wallet",
+      "ewalletDesc": "GoPay, OVO, DANA, etc."
+    },
+    "summary": {
+      "title": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "free": "Free"
+    },
+    "placeOrder": "Place Order",
+    "processing": "Processing...",
+    "backToCart": "Back to Cart",
+    "agreeTerms": "I agree to the Terms & Conditions",
+    "errors": {
+      "nameMin": "Name must be at least 2 characters",
+      "emailInvalid": "Please enter a valid email",
+      "phoneMin": "Please enter a valid phone number",
+      "addressMin": "Please enter your complete address",
+      "cityRequired": "City is required",
+      "provinceRequired": "Province is required",
+      "postalCodeRequired": "Postal code is required",
+      "paymentRequired": "Please select a payment method",
+      "termsRequired": "You must agree to the terms"
+    }
+  },
+  "thankYou": {
+    "title": "Thank You!",
+    "subtitle": "Your order has been placed successfully",
+    "orderNumber": "Order Number",
+    "orderDate": "Order Date",
+    "estimatedDelivery": "Estimated Delivery",
+    "daysFromNow": "7-14 days from now",
+    "whatNext": "What's Next?",
+    "step1": {
+      "title": "Order Confirmation",
+      "description": "You will receive an email confirmation shortly"
+    },
+    "step2": {
+      "title": "Production",
+      "description": "We'll start making your custom t-shirts"
+    },
+    "step3": {
+      "title": "Shipping",
+      "description": "Your order will be shipped once ready"
+    },
+    "step4": {
+      "title": "Delivery",
+      "description": "Receive your awesome Kaos EUY! products"
+    },
+    "needHelp": "Need Help?",
+    "contactUs": "Contact us via WhatsApp for any questions",
+    "whatsappButton": "Chat on WhatsApp",
+    "continueShopping": "Continue Shopping",
+    "viewOrders": "View My Orders"
+  },
+  "fileUpload": {
+    "title": "Upload Your Design",
+    "subtitle": "Drag and drop your file here, or click to browse",
+    "supportedFormats": "Supported formats: PNG, JPG, PDF, AI, PSD",
+    "maxSize": "Maximum file size: 10MB",
+    "uploading": "Uploading...",
+    "uploadSuccess": "File uploaded successfully!",
+    "uploadError": "Upload failed. Please try again.",
+    "removeFile": "Remove",
+    "changeFile": "Change File",
+    "preview": "Preview",
+    "noFile": "No file selected",
+    "dragActive": "Drop the file here...",
+    "browse": "Browse Files"
+  },
+  "bulkOrder": {
+    "title": "Bulk Order",
+    "subtitle": "Fill out the form below for bulk orders (10+ pieces)",
+    "companyInfo": "Company/Organization Information",
+    "contactInfo": "Contact Person",
+    "orderDetails": "Order Details",
+    "fields": {
+      "companyName": "Company/Organization Name",
+      "companyNamePlaceholder": "Enter company or organization name",
+      "contactName": "Contact Person Name",
+      "contactNamePlaceholder": "Enter contact person name",
+      "email": "Email",
+      "emailPlaceholder": "company@email.com",
+      "phone": "Phone/WhatsApp",
+      "phonePlaceholder": "081234567890",
+      "quantity": "Total Quantity",
+      "quantityPlaceholder": "Minimum 10 pieces",
+      "deadline": "Deadline",
+      "deadlinePlaceholder": "When do you need it?",
+      "description": "Project Description",
+      "descriptionPlaceholder": "Describe your project: purpose, design ideas, size distribution, etc."
+    },
+    "submitButton": "Submit Inquiry",
+    "submitting": "Submitting...",
+    "footerNote": "Our team will contact you within 24 hours with a custom quote"
   }
 }
