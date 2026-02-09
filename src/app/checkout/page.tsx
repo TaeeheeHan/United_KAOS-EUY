@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { CreditCard } from 'lucide-react';
+import { CreditCard, Store, Smartphone, Banknote } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Button } from '@/components/common/Button';
 import { Separator } from '@/components/common/Separator';
@@ -12,7 +11,6 @@ import { useCreateGuestOrder } from '@/lib/hooks/useGuestOrders';
 import { formatIDR } from '@/lib/utils';
 
 export default function CheckoutPage() {
-  const router = useRouter();
   const items = useCartStore((s) => s.items);
   const clearCart = useCartStore((s) => s.clearCart);
   const createOrder = useCreateGuestOrder();
@@ -22,6 +20,15 @@ export default function CheckoutPage() {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [notes, setNotes] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('SP');
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const paymentMethods = [
+    { code: 'SP', name: 'ShopeePay', icon: Smartphone },
+    { code: 'I1', name: 'Indomaret', icon: Store },
+    { code: 'FT', name: 'Retail', icon: Banknote },
+  ];
 
   const subtotal = useMemo(() => {
     return items.reduce(
@@ -43,6 +50,54 @@ export default function CheckoutPage() {
     );
   }
 
+  const handlePlaceOrder = async () => {
+    setIsProcessing(true);
+    setError(null);
+
+    try {
+      // Step 1: Create guest order in database
+      const { orderId, lookupToken } = await createOrder.mutateAsync({
+        items,
+        customer: { email, name, phone },
+        shipping: { full_address: address, notes },
+      });
+
+      // Step 2: Create Duitku payment
+      const paymentRes = await fetch('/api/payment/create', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          orderId,
+          amount: total,
+          email,
+          phone,
+          paymentMethod,
+          productDetails: `Kaos EUY! - ${items.length} item(s)`,
+        }),
+      });
+
+      const paymentData = await paymentRes.json();
+
+      if (!paymentRes.ok || !paymentData.paymentUrl) {
+        throw new Error(paymentData.error || 'Failed to create payment');
+      }
+
+      // Step 3: Save lookup info to sessionStorage for thank-you page
+      sessionStorage.setItem(
+        'pendingOrder',
+        JSON.stringify({ orderId, lookupToken, email })
+      );
+
+      // Step 4: Clear cart and redirect to Duitku payment page
+      clearCart();
+      window.location.href = paymentData.paymentUrl;
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+      setIsProcessing(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
@@ -57,7 +112,7 @@ export default function CheckoutPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="md:col-span-2">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email
+                    Email *
                   </label>
                   <input
                     value={email}
@@ -100,7 +155,7 @@ export default function CheckoutPage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Address
+                    Address *
                   </label>
                   <textarea
                     value={address}
@@ -179,35 +234,45 @@ export default function CheckoutPage() {
               </span>
             </div>
 
-            {createOrder.error && (
+            {/* Payment method selection */}
+            <div>
+              <p className="text-sm font-semibold text-gray-700 mb-2">Payment Method</p>
+              <div className="space-y-2">
+                {paymentMethods.map((pm) => {
+                  const Icon = pm.icon;
+                  return (
+                    <button
+                      key={pm.code}
+                      type="button"
+                      onClick={() => setPaymentMethod(pm.code)}
+                      className={`w-full flex items-center gap-3 p-3 rounded-lg border text-left transition-colors ${
+                        paymentMethod === pm.code
+                          ? 'border-primary bg-primary/5 text-gray-900'
+                          : 'border-gray-200 hover:border-gray-300 text-gray-700'
+                      }`}
+                    >
+                      <Icon className="w-5 h-5 flex-shrink-0" />
+                      <span className="font-medium">{pm.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {(error || createOrder.error) && (
               <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
-                {String(createOrder.error)}
+                {error || String(createOrder.error)}
               </div>
             )}
 
             <Button
               fullWidth
               size="lg"
-              loading={createOrder.isPending}
-              disabled={createOrder.isPending || !email || !address}
-              onClick={async () => {
-                const { orderId, lookupToken } = await createOrder.mutateAsync({
-                  items,
-                  customer: { email, name, phone },
-                  shipping: { full_address: address, notes },
-                });
-
-                clearCart();
-                router.push(
-                  `/checkout/thank-you?order_id=${encodeURIComponent(
-                    orderId
-                  )}&token=${encodeURIComponent(lookupToken)}&email=${encodeURIComponent(
-                    email
-                  )}`
-                );
-              }}
+              loading={isProcessing}
+              disabled={isProcessing || !email || !address}
+              onClick={handlePlaceOrder}
             >
-              Place order
+              {isProcessing ? 'Processing...' : 'Pay Now'}
             </Button>
 
             <Link href="/cart">

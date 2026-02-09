@@ -12,9 +12,22 @@ import { CustomizationDetails } from '@/components/orders/CustomizationDetails';
 
 function ThankYouInner() {
   const params = useSearchParams();
-  const orderId = params.get('order_id');
-  const token = params.get('token');
-  const email = params.get('email');
+  let orderId = params.get('order_id');
+  let token = params.get('token');
+  let email = params.get('email');
+
+  // Try to recover order info from sessionStorage (after Duitku redirect)
+  if (!token || !email) {
+    try {
+      const pending = sessionStorage.getItem('pendingOrder');
+      if (pending) {
+        const parsed = JSON.parse(pending);
+        if (!orderId) orderId = parsed.orderId;
+        if (!token) token = parsed.lookupToken;
+        if (!email) email = parsed.email;
+      }
+    } catch {}
+  }
 
   const { data, isLoading, error } = useGuestOrderDetail({
     orderId,
@@ -138,6 +151,24 @@ function ThankYouInner() {
                 <p>
                   <span className="font-semibold">Status:</span>{' '}
                   {String((order as any)?.status ?? 'pending')}
+                </p>
+                <p>
+                  <span className="font-semibold">Payment:</span>{' '}
+                  <span
+                    className={
+                      (order as any)?.payment_status === 'paid'
+                        ? 'text-green-600 font-semibold'
+                        : (order as any)?.payment_status === 'failed'
+                        ? 'text-red-600 font-semibold'
+                        : 'text-yellow-600 font-semibold'
+                    }
+                  >
+                    {(order as any)?.payment_status === 'paid'
+                      ? 'Paid'
+                      : (order as any)?.payment_status === 'failed'
+                      ? 'Failed'
+                      : 'Awaiting Payment'}
+                  </span>
                 </p>
               </div>
 
