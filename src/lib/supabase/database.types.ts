@@ -163,6 +163,10 @@ export type Database = {
           guest_phone: string | null;
           guest_shipping: Json | null;
           lookup_token: string;
+          payment_reference: string | null;
+          payment_method: string | null;
+          payment_status: string;
+          paid_at: string | null;
           created_at: string;
           updated_at: string;
         };
@@ -180,6 +184,10 @@ export type Database = {
           guest_phone?: string | null;
           guest_shipping?: Json | null;
           lookup_token?: string;
+          payment_reference?: string | null;
+          payment_method?: string | null;
+          payment_status?: string;
+          paid_at?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -197,6 +205,10 @@ export type Database = {
           guest_phone?: string | null;
           guest_shipping?: Json | null;
           lookup_token?: string;
+          payment_reference?: string | null;
+          payment_method?: string | null;
+          payment_status?: string;
+          paid_at?: string | null;
           created_at?: string;
           updated_at?: string;
         };
