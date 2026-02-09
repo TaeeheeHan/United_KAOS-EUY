@@ -14,10 +14,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const merchantCode = process.env.DUITKU_MERCHANT_CODE!;
-    const apiKey = process.env.DUITKU_API_KEY!;
-    const baseUrl = process.env.DUITKU_BASE_URL!;
-    const appBaseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
+    const merchantCode = process.env.DUITKU_MERCHANT_CODE;
+    const apiKey = process.env.DUITKU_API_KEY;
+    const baseUrl = process.env.DUITKU_BASE_URL;
+    const appBaseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+    if (!merchantCode || !apiKey || !baseUrl) {
+      console.error('Payment env missing:', { merchantCode: !!merchantCode, apiKey: !!apiKey, baseUrl: !!baseUrl });
+      return NextResponse.json(
+        { error: 'Payment gateway not configured. Set DUITKU_MERCHANT_CODE, DUITKU_API_KEY, DUITKU_BASE_URL.' },
+        { status: 500 }
+      );
+    }
 
     const paymentAmount = Math.round(amount);
     const merchantOrderId = orderId;
@@ -45,6 +53,8 @@ export async function POST(request: NextRequest) {
       expiryPeriod: 1440, // 24 hours
     };
 
+    console.log('Duitku request:', { baseUrl, merchantCode, paymentAmount, paymentMethod, callbackUrl });
+
     const response = await fetch(`${baseUrl}/merchant/v2/inquiry`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -54,9 +64,9 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
 
     if (data.statusCode !== '00') {
-      console.error('Duitku error:', data);
+      console.error('Duitku error:', JSON.stringify(data));
       return NextResponse.json(
-        { error: data.statusMessage || 'Payment creation failed' },
+        { error: `Duitku: ${data.statusMessage || data.Message || JSON.stringify(data)}` },
         { status: 400 }
       );
     }

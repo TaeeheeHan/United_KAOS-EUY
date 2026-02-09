@@ -10,7 +10,7 @@ import { Button } from '@/components/common/Button';
 import { ColorSelector } from '@/components/products/ColorSelector';
 import { SizeSelector } from '@/components/products/SizeSelector';
 import { QuantitySelector } from '@/components/products/QuantitySelector';
-import { formatIDR } from '@/lib/utils';
+import { formatIDR, PLACEHOLDER_IMAGE } from '@/lib/utils';
 import { useCartStore } from '@/stores/cart';
 import { PositionSelector } from '@/components/custom/PositionSelector';
 import { CustomVisualizer } from '@/components/custom/CustomVisualizer';
@@ -113,7 +113,7 @@ export default function ProductDetailPage() {
 
   const canAdd = Boolean(product.in_stock && size && color && quantity > 0);
   const images = product.images ?? [];
-  const mainImage = images[currentImageIndex] ?? images[0];
+  const mainImage = images[currentImageIndex] ?? images[0] ?? PLACEHOLDER_IMAGE;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -126,11 +126,14 @@ export default function ProductDetailPage() {
           <div className="bg-white rounded-2xl overflow-hidden border border-gray-200">
             <div className="relative aspect-square bg-gray-100">
               <Image
-                src={mainImage ?? 'https://placehold.co/800x800/png'}
+                src={mainImage}
                 alt={product.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 priority
+                onError={(e) => { (e.target as HTMLImageElement).src = PLACEHOLDER_IMAGE; }}
+                unoptimized={mainImage === PLACEHOLDER_IMAGE}
               />
             </div>
 

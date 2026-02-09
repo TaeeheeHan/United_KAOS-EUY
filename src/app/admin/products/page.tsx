@@ -8,7 +8,7 @@ import { useProducts } from '@/lib/hooks/useProducts';
 import { createProduct, deleteProduct, updateProduct, type AdminProductInput } from '@/lib/api/adminProducts';
 import { Button } from '@/components/common/Button';
 import { Modal } from '@/components/common/Modal';
-import { formatIDR } from '@/lib/utils';
+import { formatIDR, resizeImage } from '@/lib/utils';
 import { getSupabaseBrowserClient } from '@/lib/supabase/browser';
 
 const allSizes: Size[] = ['XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL'];
@@ -85,9 +85,10 @@ export default function AdminProductsPage() {
       const supabase = getSupabaseBrowserClient();
       const uploadedUrls: string[] = [];
 
-      for (const file of Array.from(files)) {
-        if (!file.type.startsWith('image/')) continue;
+      for (const rawFile of Array.from(files)) {
+        if (!rawFile.type.startsWith('image/')) continue;
 
+        const file = await resizeImage(rawFile, 1200, 0.85);
         const uuid =
           typeof crypto !== 'undefined' && 'randomUUID' in crypto
             ? crypto.randomUUID()

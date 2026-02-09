@@ -73,3 +73,55 @@ export function isEmpty(value: any): boolean {
 export function clamp(num: number, min: number, max: number): number {
   return Math.min(Math.max(num, min), max);
 }
+
+/**
+ * Resize an image file to fit within maxSize and compress as JPEG.
+ * Returns a new File ready for upload.
+ */
+export function resizeImage(
+  file: File,
+  maxSize = 1200,
+  quality = 0.85,
+): Promise<File> {
+  return new Promise((resolve, reject) => {
+    const img = new window.Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      let { width, height } = img;
+
+      if (width <= maxSize && height <= maxSize && file.size <= 500_000) {
+        resolve(file);
+        return;
+      }
+
+      if (width > height) {
+        if (width > maxSize) { height = Math.round(height * (maxSize / width)); width = maxSize; }
+      } else {
+        if (height > maxSize) { width = Math.round(width * (maxSize / height)); height = maxSize; }
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d')!;
+      ctx.drawImage(img, 0, 0, width, height);
+
+      canvas.toBlob(
+        (blob) => {
+          if (!blob) { reject(new Error('Failed to compress image')); return; }
+          const ext = blob.type === 'image/png' ? '.png' : '.jpg';
+          const name = file.name.replace(/\.[^.]+$/, '') + ext;
+          resolve(new File([blob], name, { type: blob.type }));
+        },
+        file.type === 'image/png' ? 'image/png' : 'image/jpeg',
+        quality,
+      );
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Failed to load image')); };
+    img.src = url;
+  });
+}
+
+/** Placeholder for broken images */
+export const PLACEHOLDER_IMAGE = 'https://placehold.co/800x800/f3f4f6/9ca3af?text=No+Image';

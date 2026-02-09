@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Trash2 } from 'lucide-react';
 import type { CartItem as CartItemType } from '@/types';
 import { QuantitySelector } from '@/components/products/QuantitySelector';
-import { formatIDR } from '@/lib/utils';
+import { formatIDR, PLACEHOLDER_IMAGE } from '@/lib/utils';
 import { Checkbox } from '@/components/common/Checkbox';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -30,10 +30,11 @@ export function CartItem({
   const appliedCount = item.customization?.applied_positions?.length ?? 0;
   const colorIndex =
     item.product.colors?.findIndex((c) => c.code === item.color.code) ?? -1;
-  const imageSrc =
+  const rawImgSrc =
     colorIndex >= 0 && colorIndex < item.product.images.length
       ? item.product.images[colorIndex]
       : item.product.images[0];
+  const imageSrc = rawImgSrc || PLACEHOLDER_IMAGE;
 
   return (
     <div className="flex gap-4 p-4 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
@@ -51,7 +52,10 @@ export function CartItem({
             src={imageSrc}
             alt={item.product.name}
             fill
+            sizes="96px"
             className="object-cover"
+            onError={(e) => { (e.target as HTMLImageElement).src = PLACEHOLDER_IMAGE; }}
+            unoptimized={imageSrc === PLACEHOLDER_IMAGE}
           />
         </div>
       </Link>

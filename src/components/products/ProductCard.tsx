@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import type { Product } from '@/types';
 import { Badge } from '@/components/common/Badge';
-import { formatIDR } from '@/lib/utils';
+import { formatIDR, PLACEHOLDER_IMAGE } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/common/Button';
 
@@ -20,22 +20,27 @@ export function ProductCard({
 }: ProductCardProps) {
   const { t } = useLanguage();
   const [isFavorite, setIsFavorite] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const imgSrc = (!imgError && product.images?.[0]) || PLACEHOLDER_IMAGE;
 
   return (
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
-      className="group"
+      className="group h-full"
     >
-      <div className="bg-white rounded-xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
+      <div className="bg-white rounded-xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
         {/* Image */}
         <Link href={`/products/${product.slug}`}>
           <div className="relative aspect-square overflow-hidden bg-gray-100">
             <Image
-              src={product.images[0]}
+              src={imgSrc}
               alt={product.name}
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
+              onError={() => setImgError(true)}
+              unoptimized={imgSrc === PLACEHOLDER_IMAGE}
             />
 
             {/* Badges */}
@@ -81,14 +86,14 @@ export function ProductCard({
         </Link>
 
         {/* Content */}
-        <div className="p-4">
+        <div className="p-4 flex flex-col flex-1">
           <Link href={`/products/${product.slug}`}>
             <h3 className="font-semibold text-lg text-gray-900 mb-2 line-clamp-1 hover:text-primary transition-colors">
               {product.name}
             </h3>
           </Link>
 
-          <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+          <p className="text-sm text-gray-600 mb-3 line-clamp-2 min-h-[2.5rem]">
             {product.description}
           </p>
 
@@ -117,6 +122,7 @@ export function ProductCard({
           </div>
 
           {/* View Details Button */}
+          <div className="mt-auto" />
           {product.in_stock ? (
             <div className="flex gap-2">
               <Link className="flex-1" href={`/products/${product.slug}`}>
