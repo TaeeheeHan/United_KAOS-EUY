@@ -12,7 +12,6 @@ import {
   AlertCircle,
 } from 'lucide-react';
 import Link from 'next/link';
-import { useOrderStore } from '@/stores/order';
 import { formatIDR } from '@/lib/utils';
 
 const statsCards = [
@@ -58,10 +57,8 @@ const orderStatusCards = [
 ];
 
 export default function AdminDashboardPage() {
-  const { orderHistory } = useOrderStore();
-
-  // Get recent orders (last 5)
-  const recentOrders = orderHistory.slice(0, 5);
+  // TODO: fetch recent orders from API when ready
+  const recentOrders: any[] = [];
 
   return (
     <div className="space-y-6">

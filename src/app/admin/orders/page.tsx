@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Eye, X, Download, Package } from 'lucide-react';
 import { Button } from '@/components/common/Button';
 import { Separator } from '@/components/common/Separator';
-import { StatusBadge } from '@/components/admin/StatusBadge';
 import { formatIDR } from '@/lib/utils';
 import {
   useAdminOrderDetail,
@@ -256,7 +255,15 @@ export default function AdminOrdersPage() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <StatusBadge status={order.status as any} />
+                      <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
+                        order.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                        order.status === 'processing' ? 'bg-blue-100 text-blue-800' :
+                        order.status === 'printing' ? 'bg-purple-100 text-purple-800' :
+                        order.status === 'shipped' ? 'bg-indigo-100 text-indigo-800' :
+                        order.status === 'completed' ? 'bg-green-100 text-green-800' :
+                        order.status === 'cancelled' ? 'bg-red-100 text-red-800' :
+                        'bg-gray-100 text-gray-800'
+                      }`}>{order.status}</span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="text-sm font-medium text-gray-900">
@@ -336,7 +343,15 @@ export default function AdminOrdersPage() {
                       <div>
                         <p className="text-sm text-gray-500">Status</p>
                         <div className="mt-1">
-                          <StatusBadge status={detail.data.status as any} />
+                          <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
+                            detail.data.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                            detail.data.status === 'processing' ? 'bg-blue-100 text-blue-800' :
+                            detail.data.status === 'printing' ? 'bg-purple-100 text-purple-800' :
+                            detail.data.status === 'shipped' ? 'bg-indigo-100 text-indigo-800' :
+                            detail.data.status === 'completed' ? 'bg-green-100 text-green-800' :
+                            detail.data.status === 'cancelled' ? 'bg-red-100 text-red-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>{detail.data.status}</span>
                         </div>
                       </div>
 
