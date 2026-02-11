@@ -13,9 +13,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const merchantCode = process.env.DUITKU_MERCHANT_CODE!;
-    const apiKey = process.env.DUITKU_API_KEY!;
-    const baseUrl = process.env.DUITKU_BASE_URL!;
+    const merchantCode = process.env.DUITKU_MERCHANT_CODE;
+    const apiKey = process.env.DUITKU_API_KEY;
+    const baseUrl = process.env.DUITKU_BASE_URL;
+
+    if (!merchantCode || !apiKey || !baseUrl) {
+      console.error('Payment env missing:', {
+        hasMerchantCode: !!merchantCode,
+        hasApiKey: !!apiKey,
+        hasBaseUrl: !!baseUrl,
+      });
+      return NextResponse.json(
+        { error: 'Payment gateway not configured' },
+        { status: 500 }
+      );
+    }
 
     const signature = crypto
       .createHash('md5')

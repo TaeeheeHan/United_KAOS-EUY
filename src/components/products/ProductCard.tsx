@@ -127,7 +127,7 @@ export function ProductCard({
             <div className="flex gap-2">
               <Link className="flex-1" href={`/products/${product.slug}`}>
                 <Button variant="outline" size="sm" fullWidth>
-                  {t('products.viewDetails') || 'View Details'}
+                  {t('products.viewDetails')}
                 </Button>
               </Link>
             </div>

@@ -22,7 +22,12 @@
     "share": "Share",
     "customizeProduct": "Customize This Product",
     "customizeDescription": "Create your own product with your desired design!",
-    "customOrderBtn": "Custom Order"
+    "customOrderBtn": "Custom Order",
+    "viewDetails": "Details",
+    "addVariant": "Add",
+    "variantList": "Selected Items",
+    "removeVariant": "Remove",
+    "noVariants": "Select size and color, then add items"
   },
   "cart": {
     "title": "Shopping Cart",

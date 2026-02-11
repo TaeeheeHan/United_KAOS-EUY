@@ -22,7 +22,12 @@
     "share": "Bagikan",
     "customizeProduct": "Custom Produk Ini",
     "customizeDescription": "Buat produkmu sendiri dengan desain yang kamu inginkan!",
-    "customOrderBtn": "Custom Order"
+    "customOrderBtn": "Custom Order",
+    "viewDetails": "Detail",
+    "addVariant": "Tambah",
+    "variantList": "Item Dipilih",
+    "removeVariant": "Hapus",
+    "noVariants": "Pilih ukuran dan warna, lalu tambahkan item"
   },
   "cart": {
     "title": "Keranjang Belanja",

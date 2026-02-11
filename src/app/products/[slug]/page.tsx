@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { X, Plus } from 'lucide-react';
 import type { ProductColor, Size } from '@/types';
 import { useProducts } from '@/lib/hooks/useProducts';
 import { Button } from '@/components/common/Button';
@@ -16,10 +17,19 @@ import { PositionSelector } from '@/components/custom/PositionSelector';
 import { CustomVisualizer } from '@/components/custom/CustomVisualizer';
 import { DesignUploader } from '@/components/custom/DesignUploader';
 import { useCustomDesignStore } from '@/stores/customDesign';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+interface VariantItem {
+  id: string;
+  color: ProductColor;
+  size: Size;
+  quantity: number;
+}
 
 export default function ProductDetailPage() {
   const params = useParams<{ slug: string }>();
   const slug = params?.slug;
+  const { t } = useLanguage();
 
   const router = useRouter();
   const addItem = useCartStore((s) => s.addItem);
@@ -38,6 +48,7 @@ export default function ProductDetailPage() {
   const [size, setSize] = useState<Size | undefined>(defaultSize);
   const [color, setColor] = useState<ProductColor | undefined>(defaultColor);
   const [quantity, setQuantity] = useState(1);
+  const [variants, setVariants] = useState<VariantItem[]>([]);
   const [isAdding, setIsAdding] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showCustomizer, setShowCustomizer] = useState(false);
@@ -53,6 +64,46 @@ export default function ProductDetailPage() {
   useEffect(() => {
     if (!color && defaultColor) setColor(defaultColor);
   }, [defaultColor, color]);
+
+  const handleAddVariant = useCallback(() => {
+    if (!size || !color) return;
+    setVariants((prev) => {
+      const existing = prev.find(
+        (v) => v.color.code === color.code && v.size === size
+      );
+      if (existing) {
+        return prev.map((v) =>
+          v.id === existing.id
+            ? { ...v, quantity: v.quantity + quantity }
+            : v
+        );
+      }
+      return [
+        ...prev,
+        {
+          id: `${color.code}-${size}-${Date.now()}`,
+          color,
+          size,
+          quantity,
+        },
+      ];
+    });
+    setQuantity(1);
+  }, [size, color, quantity]);
+
+  const handleRemoveVariant = useCallback((id: string) => {
+    setVariants((prev) => prev.filter((v) => v.id !== id));
+  }, []);
+
+  const handleUpdateVariantQty = useCallback((id: string, qty: number) => {
+    if (qty <= 0) {
+      setVariants((prev) => prev.filter((v) => v.id !== id));
+      return;
+    }
+    setVariants((prev) =>
+      prev.map((v) => (v.id === id ? { ...v, quantity: qty } : v))
+    );
+  }, []);
 
   useEffect(() => {
     resetAllDesign();
@@ -109,9 +160,11 @@ export default function ProductDetailPage() {
   const appliedParts = getAppliedParts();
   const customFeePerUnit = getCustomPrice();
   const unitTotal = product.price + customFeePerUnit;
-  const lineTotal = unitTotal * quantity;
+  const totalVariantQty = variants.reduce((sum, v) => sum + v.quantity, 0);
+  const lineTotal = unitTotal * (totalVariantQty || quantity);
 
-  const canAdd = Boolean(product.in_stock && size && color && quantity > 0);
+  const canAddVariant = Boolean(product.in_stock && size && color && quantity > 0);
+  const canAddToCart = Boolean(product.in_stock && variants.length > 0);
   const images = product.images ?? [];
   const mainImage = images[currentImageIndex] ?? images[0] ?? PLACEHOLDER_IMAGE;
 
@@ -210,7 +263,63 @@ export default function ProductDetailPage() {
               />
             ) : null}
 
-            <QuantitySelector value={quantity} onChange={setQuantity} />
+            {/* Quantity + Add variant button */}
+            <div className="flex items-end gap-3">
+              <QuantitySelector value={quantity} onChange={setQuantity} />
+              <Button
+                type="button"
+                variant="outline"
+                size="md"
+                disabled={!canAddVariant}
+                onClick={handleAddVariant}
+                leftIcon={Plus}
+              >
+                {t('products.addVariant')}
+              </Button>
+            </div>
+
+            {/* Variant list */}
+            <div className="rounded-xl border border-gray-200 bg-white p-4 space-y-3">
+              <p className="text-sm font-semibold text-gray-700">
+                {t('products.variantList')} ({totalVariantQty})
+              </p>
+              {variants.length === 0 ? (
+                <p className="text-sm text-gray-400">{t('products.noVariants')}</p>
+              ) : (
+                <div className="space-y-2">
+                  {variants.map((v) => (
+                    <div
+                      key={v.id}
+                      className="flex items-center gap-3 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2"
+                    >
+                      <div
+                        className="w-6 h-6 rounded-full border-2 border-gray-300 flex-shrink-0"
+                        style={{ backgroundColor: v.color.code }}
+                        title={v.color.name}
+                      />
+                      <span className="text-sm font-medium text-gray-700 min-w-[2rem]">
+                        {v.size}
+                      </span>
+                      <span className="text-sm text-gray-500">{v.color.name}</span>
+                      <div className="ml-auto flex items-center gap-2">
+                        <QuantitySelector
+                          value={v.quantity}
+                          onChange={(qty) => handleUpdateVariantQty(v.id, qty)}
+                          className="!gap-1"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveVariant(v.id)}
+                          className="p-1 text-gray-400 hover:text-red-500 transition-colors"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <div className="rounded-xl border border-gray-200 bg-white p-5 space-y-4">
               <div className="flex items-center justify-between gap-3">
@@ -252,8 +361,8 @@ export default function ProductDetailPage() {
                 <span className="font-semibold">{formatIDR(customFeePerUnit)}</span>
               </div>
               <div className="flex items-center justify-between text-sm text-gray-700 mt-1">
-                <span>Quantity</span>
-                <span className="font-semibold">× {quantity}</span>
+                <span>{t('products.quantity')}</span>
+                <span className="font-semibold">× {totalVariantQty || quantity}</span>
               </div>
               <div className="flex items-center justify-between mt-3">
                 <span className="text-base font-semibold text-gray-900">Total</span>
@@ -263,31 +372,36 @@ export default function ProductDetailPage() {
 
             <Button
               fullWidth
-              disabled={!canAdd || isAdding}
+              disabled={!canAddToCart || isAdding}
               loading={isAdding}
               onClick={async () => {
-                if (!size || !color) return;
+                if (variants.length === 0) return;
                 setIsAdding(true);
                 try {
-                   const design = useCustomDesignStore.getState();
-                   const parts = {
-                     front: design.front,
-                     back: design.back,
-                     leftArm: design.leftArm,
-                     rightArm: design.rightArm,
-                   };
+                  const design = useCustomDesignStore.getState();
+                  const parts = {
+                    front: design.front,
+                    back: design.back,
+                    leftArm: design.leftArm,
+                    rightArm: design.rightArm,
+                  };
+                  const customization = {
+                    parts,
+                    applied_positions: design.getAppliedParts(),
+                  };
+                  const fee = design.getCustomPrice();
 
-                  addItem({
-                    product,
-                    size,
-                    color,
-                    quantity,
-                    customization: {
-                      parts,
-                      applied_positions: design.getAppliedParts(),
-                    },
-                    custom_fee_per_unit: design.getCustomPrice(),
-                  });
+                  for (const v of variants) {
+                    addItem({
+                      product,
+                      size: v.size,
+                      color: v.color,
+                      quantity: v.quantity,
+                      customization,
+                      custom_fee_per_unit: fee,
+                    });
+                  }
+                  setVariants([]);
                   resetAllDesign();
                   router.push('/cart');
                 } finally {
@@ -295,7 +409,7 @@ export default function ProductDetailPage() {
                 }
               }}
             >
-              Custom & add to cart
+              {t('products.addToCart')} ({totalVariantQty})
             </Button>
           </div>
         </div>

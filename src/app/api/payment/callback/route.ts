@@ -18,8 +18,19 @@ export async function POST(request: NextRequest) {
       signature: receivedSignature,
     } = body;
 
-    const apiKey = process.env.DUITKU_API_KEY!;
-    const expectedMerchantCode = process.env.DUITKU_MERCHANT_CODE!;
+    const apiKey = process.env.DUITKU_API_KEY;
+    const expectedMerchantCode = process.env.DUITKU_MERCHANT_CODE;
+
+    if (!apiKey || !expectedMerchantCode) {
+      console.error('Payment env missing:', {
+        hasMerchantCode: !!expectedMerchantCode,
+        hasApiKey: !!apiKey,
+      });
+      return NextResponse.json(
+        { error: 'Payment gateway not configured' },
+        { status: 500 }
+      );
+    }
 
     // Verify merchant code
     if (merchantCode !== expectedMerchantCode) {
@@ -39,6 +50,24 @@ export async function POST(request: NextRequest) {
     }
 
     const supabase = getSupabaseAdmin();
+
+    // Check order exists
+    const { data: order, error: orderError } = await supabase
+      .from('orders')
+      .select('id, payment_status')
+      .eq('id', merchantOrderId)
+      .single();
+
+    if (orderError || !order) {
+      console.error(`Order not found: ${merchantOrderId}`);
+      return NextResponse.json({ error: 'Order not found' }, { status: 404 });
+    }
+
+    // Skip if already paid
+    if (order.payment_status === 'paid') {
+      console.log(`Order ${merchantOrderId} already paid, skipping callback`);
+      return NextResponse.json({ success: true });
+    }
 
     if (resultCode === '00') {
       // Payment successful
