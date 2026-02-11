@@ -234,7 +234,7 @@ Customer Checkout → Select payment method → Click "Pay Now"
 
 ### Payment Configuration
 
-- Merchant Code: `D18538` (Production)
+- Merchant Code: `<YOUR_DUITKU_MERCHANT_CODE>` (Production)
 - Base URL: `https://passport.duitku.com/webapi/api`
 - Environment variables in `.env.local`:
   - `DUITKU_MERCHANT_CODE`
