@@ -90,7 +90,8 @@
     "catalog": "Catalog",
     "customOrder": "Create Your Shirt!",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "orderLookup": "My Order"
   },
   "home": {
     "hero": {

@@ -45,7 +45,7 @@ export default function Header() {
             <Link
               href="/order-lookup"
               className="hidden md:flex items-center gap-1 text-secondary hover:text-primary transition-colors"
-              title={t('nav.orderLookup') || 'Order Lookup'}
+              title={t('nav.orderLookup')}
             >
               <Search className="w-5 h-5" />
             </Link>
@@ -93,7 +93,7 @@ export default function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               <Search className="w-4 h-4" />
-              {t('nav.orderLookup') || 'Order Lookup'}
+              {t('nav.orderLookup')}
             </Link>
             {/* Language Switcher - Mobile */}
             <div className="pt-2 border-t border-gray-200">

@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/order-lookup" className="text-gray-300 hover:text-primary transition-colors">
-                  {t('nav.orderLookup') || 'Order Lookup'}
+                  {t('nav.orderLookup')}
                 </Link>
               </li>
               <li>

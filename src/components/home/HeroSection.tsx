@@ -32,7 +32,7 @@ export function HeroSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-primary font-pacifico">
-                {t('hero.subtitle')} 🎨
+                {t('hero.subtitle')}
               </h2>
             </motion.div>
 
@@ -53,7 +53,7 @@ export function HeroSection() {
             >
               <Link href="/products">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto">
-                  {t('hero.viewCatalog')} 🛍️
+                  {t('hero.viewCatalog')}
                 </Button>
               </Link>
               <Link href="/order-lookup">
@@ -62,7 +62,7 @@ export function HeroSection() {
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  {t('nav.orderLookup') || 'Track Order'} 📦
+                  {t('nav.orderLookup')}
                 </Button>
               </Link>
             </motion.div>
@@ -100,11 +100,11 @@ export function HeroSection() {
               {/* Placeholder for product image */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full animate-pulse" />
               <div className="absolute inset-8 bg-white rounded-full shadow-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">👕</div>
-                  <p className="text-2xl font-bold text-secondary">
+                <div className="text-center px-4">
+                  <p className="text-3xl md:text-4xl font-bold text-secondary leading-tight">
                     Your Design
-                    <br />
+                  </p>
+                  <p className="text-3xl md:text-4xl font-bold text-primary font-pacifico mt-2">
                     Your Story
                   </p>
                 </div>
@@ -121,7 +121,7 @@ export function HeroSection() {
                 className="absolute top-0 right-0 bg-white px-4 py-2 rounded-full shadow-lg"
               >
                 <div className="text-sm font-semibold text-primary">
-                  ✨ {t('hero.premiumQuality')}
+                  {t('hero.premiumQuality')}
                 </div>
               </motion.div>
 
@@ -136,7 +136,7 @@ export function HeroSection() {
                 className="absolute bottom-0 left-0 bg-white px-4 py-2 rounded-full shadow-lg"
               >
                 <div className="text-sm font-semibold text-accent">
-                  🚀 {t('hero.fastProduction')}
+                  {t('hero.fastProduction')}
                 </div>
               </motion.div>
             </div>

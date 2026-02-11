@@ -28,9 +28,9 @@ export function CTABanner() {
 
           <Link href="/products">
             <Button
-              variant="secondary"
+              variant="ghost"
               size="lg"
-              className="bg-white text-primary hover:bg-gray-100"
+              className="!bg-white !text-primary hover:!bg-gray-100 shadow-md hover:shadow-lg"
             >
               {t('ctaBanner.button')}
               <ArrowRight className="w-5 h-5 ml-2" />
