@@ -146,16 +146,7 @@ export function CustomVisualizer({ baseColor, productImage }: CustomVisualizerPr
           </div>
         )}
 
-        {/* Design Area Indicator */}
-        <div
-          className="absolute border-2 border-dashed border-primary/30 rounded-lg pointer-events-none"
-          style={{
-            top: `${bounds.top}%`,
-            left: `${bounds.left}%`,
-            width: `${bounds.width}%`,
-            height: `${bounds.height}%`,
-          }}
-        />
+        {/* Design Area (invisible bounds) */}
 
         {/* Custom Design Overlay - Draggable */}
         <AnimatePresence mode="wait">

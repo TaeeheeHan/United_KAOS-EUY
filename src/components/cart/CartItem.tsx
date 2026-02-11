@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Trash2 } from 'lucide-react';
+import { Trash2, Paintbrush } from 'lucide-react';
 import type { CartItem as CartItemType } from '@/types';
 import { QuantitySelector } from '@/components/products/QuantitySelector';
 import { formatIDR, PLACEHOLDER_IMAGE } from '@/lib/utils';
@@ -86,9 +86,9 @@ export function CartItem({
             <span className="font-medium">{item.size}</span>
           </div>
           {appliedCount > 0 && (
-            <div>
-              <span>Custom: </span>
-              <span className="font-medium">{appliedCount} position(s)</span>
+            <div className="flex items-center gap-1 bg-primary/10 text-primary px-2 py-0.5 rounded-full text-xs font-semibold">
+              <Paintbrush className="w-3 h-3" />
+              Custom ({appliedCount})
             </div>
           )}
         </div>

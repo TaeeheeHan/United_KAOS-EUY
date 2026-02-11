@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   ShoppingBag,
   Package,
+  Settings,
   LogOut,
   Menu,
   X,
@@ -17,6 +18,7 @@ const menuItems = [
   { href: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/admin/orders', label: 'Orders', icon: ShoppingBag },
   { href: '/admin/products', label: 'Products', icon: Package },
+  { href: '/admin/settings', label: 'Settings', icon: Settings },
 ];
 
 export function AdminSidebar() {
