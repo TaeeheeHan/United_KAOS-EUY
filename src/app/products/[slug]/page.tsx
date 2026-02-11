@@ -1,10 +1,10 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, Plus } from 'lucide-react';
+import { X, Plus, ArrowLeft } from 'lucide-react';
 import type { ProductColor, Size } from '@/types';
 import { useProducts } from '@/lib/hooks/useProducts';
 import { Button } from '@/components/common/Button';
@@ -32,7 +32,11 @@ export default function ProductDetailPage() {
   const { t } = useLanguage();
 
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const cartItemId = searchParams.get('cartItem');
   const addItem = useCartStore((s) => s.addItem);
+  const cartItems = useCartStore((s) => s.items);
+  const [viewingCartItem, setViewingCartItem] = useState(false);
 
   const { data, isLoading, error } = useProducts({ slug });
   const product = data?.[0];
@@ -105,10 +109,49 @@ export default function ProductDetailPage() {
     );
   }, []);
 
+  // Restore customization from cart item when viewing from cart
   useEffect(() => {
+    if (!cartItemId || !product) return;
+    const cartItem = cartItems.find((i) => i.id === cartItemId);
+    if (!cartItem) return;
+
+    setViewingCartItem(true);
+
+    // Restore variant info
+    setVariants([
+      {
+        id: `${cartItem.color.code}-${cartItem.size}-restored`,
+        color: cartItem.color,
+        size: cartItem.size,
+        quantity: cartItem.quantity,
+      },
+    ]);
+    setSize(cartItem.size);
+    setColor(cartItem.color);
+
+    // Restore customization into the design store
+    const parts = cartItem.customization?.parts;
+    if (parts) {
+      const store = useCustomDesignStore.getState();
+      const positions = ['front', 'back', 'leftArm', 'rightArm'] as const;
+      for (const pos of positions) {
+        const part = parts[pos];
+        if (part?.applied) {
+          if (part.image_url) store.setPartImageUrl(pos, part.image_url);
+          if (part.text) store.setPartText(pos, part.text);
+          store.setPartPosition(pos, part.position);
+          store.setPartScale(pos, part.scale);
+        }
+      }
+      setShowCustomizer(true);
+    }
+  }, [cartItemId, product, cartItems]);
+
+  useEffect(() => {
+    if (cartItemId) return; // Don't reset when viewing from cart
     resetAllDesign();
     setShowCustomizer(false);
-  }, [resetAllDesign, product?.id]);
+  }, [resetAllDesign, product?.id, cartItemId]);
 
   if (isLoading) {
     return (
@@ -171,9 +214,16 @@ export default function ProductDetailPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-12">
-        <Link href="/products" className="text-sm text-gray-600 hover:text-primary">
-          ← Back to products
-        </Link>
+        {viewingCartItem ? (
+          <Link href="/cart" className="inline-flex items-center gap-1 text-sm text-gray-600 hover:text-primary">
+            <ArrowLeft className="w-4 h-4" />
+            Back to cart
+          </Link>
+        ) : (
+          <Link href="/products" className="text-sm text-gray-600 hover:text-primary">
+            ← Back to products
+          </Link>
+        )}
 
         <div className="grid lg:grid-cols-2 gap-10 mt-6">
           <div className="bg-white rounded-2xl overflow-hidden border border-gray-200">
