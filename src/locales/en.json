@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Kaos EUY!",
-    "tagline": "Bandung's Pride, Your Style",
+    "tagline": "Looking for Bandung souvenir T-shirts? EUY!",
     "slogan": "Premium t-shirts with a touch of Bandung"
   },
   "products": {
@@ -22,12 +22,7 @@
     "share": "Share",
     "customizeProduct": "Customize This Product",
     "customizeDescription": "Create your own product with your desired design!",
-    "customOrderBtn": "Custom Order",
-    "viewDetails": "Details",
-    "addVariant": "Add",
-    "variantList": "Selected Items",
-    "removeVariant": "Remove",
-    "noVariants": "Select size and color, then add items"
+    "customOrderBtn": "Custom Order"
   },
   "cart": {
     "title": "Shopping Cart",
@@ -53,42 +48,42 @@
     "productionTime": "7-10 Days Production"
   },
   "hero": {
-    "title1": "Bandung's Pride,",
-    "title2": "Your Style",
+    "title1": "Looking for Bandung",
+    "title2": "souvenir T-shirts?",
     "subtitle": "EUY!",
-    "description": "Premium custom t-shirts with Bandung's pride. We turn your ideas into reality.",
-    "orderCustom": "Order Custom",
-    "viewCatalog": "View Catalog",
-    "happyCustomers": "Happy Customers",
-    "customDesigns": "Custom Designs",
+    "description": "Premium Bandung souvenir t-shirts with easy customization and trusted quality.",
+    "orderCustom": "Start Custom Order",
+    "viewCatalog": "See Collection",
+    "happyCustomers": "Customers Served",
+    "customDesigns": "Design Variations",
     "daysProduction": "Days Production",
-    "premiumQuality": "Premium Quality",
-    "fastProduction": "Fast Production"
+    "premiumQuality": "Premium Materials",
+    "fastProduction": "Quick Turnaround"
   },
   "valueProps": {
-    "title": "Why Choose Kaos EUY?",
-    "subtitle": "We don't just make t-shirts, we create pieces that tell your story",
+    "title": "Why People Choose Kaos EUY!",
+    "subtitle": "Local spirit, practical ordering, and quality that lasts.",
     "custom": {
-      "title": "100% Custom",
-      "description": "Your design, from sketch to finished product"
+      "title": "Design It Your Way",
+      "description": "Upload your idea or pick a template and personalize every detail."
     },
     "fast": {
-      "title": "Fast Process",
-      "description": "7-10 days from order to your hands"
+      "title": "Fast & Clear Process",
+      "description": "Simple ordering flow with transparent updates from checkout to production."
     },
     "quality": {
-      "title": "Premium Quality",
-      "description": "Selected materials, neat screen printing/DTF"
+      "title": "Comfort-First Quality",
+      "description": "Soft combed cotton, clean prints, and durable finishing."
     },
     "local": {
-      "title": "Local Pride",
-      "description": "Made in Bandung with love"
+      "title": "Authentic Bandung DNA",
+      "description": "Sundanese expressions and city-inspired visuals in every collection."
     }
   },
   "ctaBanner": {
-    "title": "Ready to Customize?",
-    "description": "Choose a product from our catalog and personalize it with your design.",
-    "button": "Browse Catalog"
+    "title": "Build Your Bandung Tee Today",
+    "description": "Start from our catalog, customize in a few steps, and checkout instantly.",
+    "button": "Start Shopping"
   },
   "nav": {
     "home": "Home",
@@ -96,7 +91,100 @@
     "customOrder": "Create Your Shirt!",
     "about": "About Us",
     "contact": "Contact",
-    "orderLookup": "My Order"
+    "orderLookup": "Track Order"
+  },
+  "about": {
+    "title": "Brand Strategy",
+    "subtitle": "The strategic foundation of Kaos EUY! as Bandung's signature souvenir T-shirt brand.",
+    "purpose": {
+      "title": "Purpose",
+      "body": "\"Kaos EUY!\" exists to become a symbol of local pride in Bandung by reflecting the city's uniqueness through high-quality T-shirts for tourists and local residents."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "To become the most well-known and sought-after Bandung souvenir T-shirt brand for local and international tourists, while becoming a symbol of pride for Bandung people."
+    },
+    "mission": {
+      "title": "Mission",
+      "item1": "Create T-shirt designs that reflect Bandung's uniqueness.",
+      "item2": "Maintain high-quality materials so products stay comfortable and durable.",
+      "item3": "Use digital platforms to make purchasing easier for tourists.",
+      "item4": "Support local communities through design and production collaboration."
+    },
+    "positioning": {
+      "title": "Positioning",
+      "body": "\"Kaos EUY!\" combines creative design, premium quality, and distinctive local Bandung elements to become the top choice for tourists and Bandung residents.",
+      "taglineLabel": "Official Tagline"
+    },
+    "addedContext": {
+      "title": "Added Context",
+      "kaosTitle": "Kaos",
+      "kaosBody": "\"Kaos\" is the Indonesian word for T-shirt.",
+      "euyTitle": "EUY",
+      "euyBody": "\"Euy\" is a casual Sundanese expression, similar to saying \"hey\" or \"yo\" in a friendly way, representing warmth and local identity."
+    },
+    "targetMarket": {
+      "title": "Target Market",
+      "demographicTitle": "Demographic",
+      "demographic1": "Age: 18-40 years old.",
+      "demographic2": "Occupation: students, young professionals, and tourists.",
+      "demographic3": "Location: domestic tourists, Bandung residents, and online buyers across Indonesia.",
+      "psychographicTitle": "Psychographic",
+      "psychographic1": "Tourists looking for distinctive and unique souvenirs.",
+      "psychographic2": "Local residents who take pride in Bandung.",
+      "psychographic3": "People who value creativity, practicality, and local cultural uniqueness."
+    },
+    "personality": {
+      "title": "Brand Personality",
+      "item1Title": "Cheerful & Friendly",
+      "item1Body": "Use casual language and Bandung-style expressions.",
+      "item2Title": "Creative & Unique",
+      "item2Body": "Highlight eye-catching and authentic designs.",
+      "item3Title": "Trustworthy & High Quality",
+      "item3Body": "Deliver products with high standards.",
+      "item4Title": "Close to Local Culture",
+      "item4Body": "Embed Bandung values into every product."
+    },
+    "coreValues": {
+      "title": "Core Values",
+      "item1Title": "Local Creativity",
+      "item1Body": "Showcase Bandung culture through design.",
+      "item2Title": "Top Quality",
+      "item2Body": "Provide comfortable and durable materials.",
+      "item3Title": "Authentic",
+      "item3Body": "Use distinctive Bandung elements such as Sundanese language and city icons.",
+      "item4Title": "Inclusivity",
+      "item4Body": "Stay affordable for broad customer groups."
+    },
+    "messageStrategy": {
+      "title": "Message Strategy",
+      "mainLabel": "Main Message",
+      "mainBody": "\"Kaos EUY!\" is not just a Bandung souvenir T-shirt, but also a symbol of local cultural pride.",
+      "emotionalLabel": "Emotional Communication",
+      "emotional1": "\"Wear Kaos EUY!, take Bandung wherever you go.\"",
+      "emotional2": "\"Enjoy Bandung's creativity in every T-shirt.\"",
+      "functionalLabel": "Functional Communication",
+      "functional1": "Premium and comfortable materials with lasting quality.",
+      "functional2": "Distinctive Bandung designs that are unique and authentic.",
+      "functional3": "Available online and offline for easy purchasing."
+    },
+    "differentiation": {
+      "title": "Brand Differentiation",
+      "item1": "Distinctive Bandung designs not found in other brands.",
+      "item2": "Strong local cultural elements: Sundanese phrases, city icons, and historical themes.",
+      "item3": "Digital accessibility that helps tourists purchase easily.",
+      "item4": "Eco-friendly packaging aligned with cultural values."
+    },
+    "longTermGoal": {
+      "title": "Long-term Goal",
+      "item1": "Become a globally recognized Bandung souvenir brand.",
+      "item2": "Expand into tote bags, hoodies, and other merchandise.",
+      "item3": "Open a flagship store in strategic Bandung locations."
+    },
+    "cta": {
+      "title": "Ready to explore our products?",
+      "button": "Browse Catalog"
+    }
   },
   "home": {
     "hero": {
@@ -125,6 +213,18 @@
       "title": "Ready to Create Your Dream Shirt?",
       "description": "3 easy steps: Choose - Design - Order. Easy, right?",
       "button": "Try It Now!"
+    },
+    "differentiation": {
+      "title": "What Makes Kaos EUY! Different",
+      "subtitle": "Four clear reasons people choose us for Bandung souvenir t-shirts.",
+      "item1Title": "Distinctive Bandung Designs",
+      "item1Description": "Designs inspired by Bandung visuals and character that you will not find in generic souvenir stores.",
+      "item2Title": "Local Culture Built In",
+      "item2Description": "Sundanese phrases, city icons, and historical themes are embedded into our collections.",
+      "item3Title": "Online + Offline Access",
+      "item3Description": "Easy to order through digital channels and also available through offline touchpoints.",
+      "item4Title": "Eco-friendly Packaging",
+      "item4Description": "Packaging materials are selected to reduce waste while keeping product quality and presentation."
     },
     "featured": {
       "title": "Latest Collection",
@@ -356,5 +456,78 @@
     "submitButton": "Submit Inquiry",
     "submitting": "Submitting...",
     "footerNote": "Our team will contact you within 24 hours with a custom quote"
+  },
+  "contactPage": {
+    "title": "Contact Kaos EUY!",
+    "subtitle": "Questions about products, custom requests, or order support? Reach us through these channels.",
+    "intro": "Our team is ready to help you with sizing, design direction, and order follow-up.",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "Email",
+    "hoursLabel": "Support Hours",
+    "locationLabel": "Location",
+    "hoursValue": "Every day, 09:00 - 21:00 WIB",
+    "locationValue": "Bandung, West Java, Indonesia",
+    "catalogCta": "Browse Catalog",
+    "lookupCta": "Track Order"
+  },
+  "sizeGuidePage": {
+    "title": "Size Guide",
+    "subtitle": "Choose the fit that feels right before you order.",
+    "note": "Measurements are in centimeters and may vary by 1-2 cm due to production tolerance.",
+    "table": {
+      "size": "Size",
+      "chest": "Chest Width",
+      "length": "Body Length",
+      "shoulder": "Shoulder Width"
+    },
+    "tipsTitle": "How to Measure",
+    "tip1": "Lay your favorite T-shirt flat on a table.",
+    "tip2": "Measure chest width from armpit to armpit.",
+    "tip3": "Measure body length from top shoulder to bottom hem.",
+    "tip4": "If you are between sizes, choose one size up for a relaxed fit.",
+    "helpTitle": "Need a custom sizing recommendation?",
+    "helpCta": "Contact Us"
+  },
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Quick answers about ordering, customization, and shipping.",
+    "q1Title": "What is the minimum order quantity?",
+    "q1Answer": "You can order from 1 piece for personal orders. Bulk orders are available for larger quantities.",
+    "q2Title": "How long is production time?",
+    "q2Answer": "Standard production is around 7-10 days depending on quantity and design complexity.",
+    "q3Title": "Can I upload my own design?",
+    "q3Answer": "Yes. You can upload your own file and place it on available print positions during customization.",
+    "q4Title": "What payment methods are available?",
+    "q4Answer": "You can pay through the available Duitku channels shown during checkout.",
+    "q5Title": "Do you support online and offline purchase?",
+    "q5Answer": "Yes. Ordering is available online, and selected offline touchpoints are also available.",
+    "q6Title": "How can I track my order?",
+    "q6Answer": "Use the Order Lookup page with your order ID, email, and lookup token.",
+    "contactPrompt": "Still need help?",
+    "contactCta": "Go to Contact"
+  },
+  "termsPage": {
+    "title": "Terms & Conditions",
+    "subtitle": "Please review these terms before placing an order.",
+    "updatedLabel": "Last Updated",
+    "updatedDate": "February 11, 2026",
+    "section1Title": "1. Order Agreement",
+    "section1Body": "By placing an order on Kaos EUY!, you agree to provide accurate details and follow the ordering process shown on this website.",
+    "section2Title": "2. Product & Customization",
+    "section2Item1": "Colors and print appearance may vary slightly across screens and production output.",
+    "section2Item2": "Customers are responsible for uploaded design content and usage rights.",
+    "section2Item3": "Custom products cannot be canceled once production has started.",
+    "section3Title": "3. Payment",
+    "section3Item1": "Orders are processed after payment is successfully created/confirmed.",
+    "section3Item2": "Payment channels are provided by integrated partners and may change without prior notice.",
+    "section3Item3": "Any payment issue should be reported immediately through our support channels.",
+    "section4Title": "4. Production & Shipping",
+    "section4Item1": "Estimated production time is informational and may change during peak periods.",
+    "section4Item2": "Shipping duration depends on destination and courier service.",
+    "section4Item3": "Tracking details will be shared once available.",
+    "section5Title": "5. Return & Complaint",
+    "section5Body": "If there is a production defect or incorrect item, contact us with evidence within 2x24 hours after receiving the product.",
+    "section6Title": "6. Contact",
+    "section6Body": "For any legal or service-related inquiry, please contact us via the Contact page."
   }
 }

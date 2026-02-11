@@ -1,7 +1,7 @@
 {
   "brand": {
     "name": "Kaos EUY!",
-    "tagline": "Bandung's Pride, Your Style",
+    "tagline": "Looking for Bandung souvenir T-shirts? EUY!",
     "slogan": "Kaos premium dengan sentuhan khas Bandung"
   },
   "products": {
@@ -22,12 +22,7 @@
     "share": "Bagikan",
     "customizeProduct": "Custom Produk Ini",
     "customizeDescription": "Buat produkmu sendiri dengan desain yang kamu inginkan!",
-    "customOrderBtn": "Custom Order",
-    "viewDetails": "Detail",
-    "addVariant": "Tambah",
-    "variantList": "Item Dipilih",
-    "removeVariant": "Hapus",
-    "noVariants": "Pilih ukuran dan warna, lalu tambahkan item"
+    "customOrderBtn": "Custom Order"
   },
   "cart": {
     "title": "Keranjang Belanja",
@@ -53,42 +48,42 @@
     "productionTime": "Produksi 7-10 Hari"
   },
   "hero": {
-    "title1": "Kebanggaan Bandung,",
-    "title2": "Gayamu",
+    "title1": "Cari kaos oleh-oleh",
+    "title2": "Bandung?",
     "subtitle": "EUY!",
-    "description": "Kaos custom premium dengan kebanggaan Bandung. Kami wujudkan idemu menjadi kenyataan.",
-    "orderCustom": "Pesan Custom",
-    "viewCatalog": "Lihat Katalog",
-    "happyCustomers": "Pelanggan Puas",
-    "customDesigns": "Desain Custom",
+    "description": "Kaos oleh-oleh Bandung berkualitas premium dengan custom yang mudah.",
+    "orderCustom": "Mulai Custom",
+    "viewCatalog": "Lihat Koleksi",
+    "happyCustomers": "Pelanggan Terlayani",
+    "customDesigns": "Variasi Desain",
     "daysProduction": "Hari Produksi",
-    "premiumQuality": "Kualitas Premium",
+    "premiumQuality": "Bahan Premium",
     "fastProduction": "Proses Cepat"
   },
   "valueProps": {
-    "title": "Kenapa Pilih Kaos EUY?",
-    "subtitle": "Kami bukan cuma bikin kaos, tapi menciptakan karya yang menceritakan kisahmu",
+    "title": "Kenapa Banyak Orang Pilih Kaos EUY!",
+    "subtitle": "Rasa lokal yang kuat, proses order praktis, dan kualitas yang tahan lama.",
     "custom": {
-      "title": "100% Custom",
-      "description": "Desainmu, dari sketch sampai jadi"
+      "title": "Desain Sesukamu",
+      "description": "Upload idemu atau pilih template, lalu atur detail sesuai kebutuhan."
     },
     "fast": {
-      "title": "Proses Cepat",
-      "description": "7-10 hari dari order ke tanganmu"
+      "title": "Proses Cepat & Jelas",
+      "description": "Alur order simpel dengan update transparan dari checkout sampai produksi."
     },
     "quality": {
-      "title": "Kualitas Premium",
-      "description": "Bahan pilihan, sablon/DTF rapi"
+      "title": "Kualitas yang Nyaman Dipakai",
+      "description": "Cotton combed lembut, hasil print rapi, dan finishing yang awet."
     },
     "local": {
-      "title": "Local Pride",
-      "description": "Made in Bandung dengan cinta"
+      "title": "DNA Bandung yang Autentik",
+      "description": "Ekspresi Sunda dan elemen kota Bandung hadir di setiap koleksi."
     }
   },
   "ctaBanner": {
-    "title": "Siap Custom?",
-    "description": "Pilih produk dari katalog lalu personalisasi dengan desainmu.",
-    "button": "Lihat Katalog"
+    "title": "Bikin Kaos Bandungmu Sekarang",
+    "description": "Mulai dari katalog, custom dalam beberapa langkah, lalu checkout langsung.",
+    "button": "Mulai Belanja"
   },
   "nav": {
     "home": "Beranda",
@@ -96,7 +91,100 @@
     "customOrder": "Bikin Kaos EUY!",
     "about": "Tentang Kami",
     "contact": "Hubungi",
-    "orderLookup": "Pesanan Saya"
+    "orderLookup": "Lacak Pesanan"
+  },
+  "about": {
+    "title": "Strategi Brand",
+    "subtitle": "Fondasi strategi Kaos EUY! sebagai brand kaos oleh-oleh khas Bandung.",
+    "purpose": {
+      "title": "Purpose",
+      "body": "\"Kaos EUY!\" hadir untuk menjadi simbol kebanggaan lokal Bandung, dengan menampilkan keunikan kota melalui kaos berkualitas tinggi untuk wisatawan dan warga lokal."
+    },
+    "vision": {
+      "title": "Vision",
+      "body": "Menjadi brand kaos oleh-oleh Bandung yang paling dikenal dan dicari oleh wisatawan lokal maupun internasional, sekaligus menjadi simbol kebanggaan masyarakat Bandung."
+    },
+    "mission": {
+      "title": "Mission",
+      "item1": "Menciptakan desain kaos yang merefleksikan keunikan Bandung.",
+      "item2": "Menjaga kualitas bahan agar nyaman dipakai dan tahan lama.",
+      "item3": "Memanfaatkan platform digital agar pembelian mudah bagi wisatawan.",
+      "item4": "Mendukung komunitas lokal melalui kolaborasi desain dan produksi."
+    },
+    "positioning": {
+      "title": "Positioning",
+      "body": "\"Kaos EUY!\" memadukan desain kreatif, kualitas premium, dan elemen lokal khas Bandung sebagai pilihan utama wisatawan dan warga Bandung.",
+      "taglineLabel": "Tagline Resmi"
+    },
+    "addedContext": {
+      "title": "Added Context",
+      "kaosTitle": "Kaos",
+      "kaosBody": "\"Kaos\" adalah kata dalam bahasa Indonesia untuk T-shirt.",
+      "euyTitle": "EUY",
+      "euyBody": "\"Euy\" adalah ekspresi santai dalam bahasa Sunda, mirip \"hey\" atau \"yo\", yang menunjukkan kehangatan dan identitas lokal."
+    },
+    "targetMarket": {
+      "title": "Target Market",
+      "demographicTitle": "Demografis",
+      "demographic1": "Usia: 18-40 tahun.",
+      "demographic2": "Pekerjaan: pelajar, mahasiswa, profesional muda, dan wisatawan.",
+      "demographic3": "Lokasi: wisatawan domestik, warga Bandung, dan pembeli online di seluruh Indonesia.",
+      "psychographicTitle": "Psikografis",
+      "psychographic1": "Wisatawan yang mencari oleh-oleh unik dan berbeda.",
+      "psychographic2": "Warga lokal yang bangga dengan kota Bandung.",
+      "psychographic3": "Orang yang menghargai kreativitas, kepraktisan, dan keunikan budaya lokal."
+    },
+    "personality": {
+      "title": "Brand Personality",
+      "item1Title": "Ceria & Ramah",
+      "item1Body": "Menggunakan bahasa kasual dengan ekspresi khas Bandung.",
+      "item2Title": "Kreatif & Unik",
+      "item2Body": "Menonjolkan desain yang menarik dan autentik.",
+      "item3Title": "Terpercaya & Berkualitas",
+      "item3Body": "Menghadirkan produk dengan standar kualitas tinggi.",
+      "item4Title": "Dekat dengan Budaya Lokal",
+      "item4Body": "Membawa nilai-nilai Bandung di setiap produk."
+    },
+    "coreValues": {
+      "title": "Core Values",
+      "item1Title": "Kreativitas Lokal",
+      "item1Body": "Menampilkan budaya Bandung lewat desain.",
+      "item2Title": "Kualitas Terbaik",
+      "item2Body": "Menggunakan bahan yang nyaman dan tahan lama.",
+      "item3Title": "Autentik",
+      "item3Body": "Menggunakan elemen khas Bandung seperti bahasa Sunda dan ikon kota.",
+      "item4Title": "Inklusif",
+      "item4Body": "Harga tetap terjangkau untuk berbagai kalangan."
+    },
+    "messageStrategy": {
+      "title": "Message Strategy",
+      "mainLabel": "Pesan Utama",
+      "mainBody": "\"Kaos EUY!\" bukan hanya kaos oleh-oleh Bandung, tetapi juga simbol kebanggaan budaya lokal.",
+      "emotionalLabel": "Komunikasi Emosional",
+      "emotional1": "\"Pakai Kaos EUY!, bawa Bandung ke mana pun kamu pergi.\"",
+      "emotional2": "\"Nikmati kreativitas Bandung di setiap kaos.\"",
+      "functionalLabel": "Komunikasi Fungsional",
+      "functional1": "Bahan premium yang nyaman dipakai dan tahan lama.",
+      "functional2": "Desain khas Bandung yang unik dan autentik.",
+      "functional3": "Tersedia online dan offline agar mudah dibeli."
+    },
+    "differentiation": {
+      "title": "Brand Differentiation",
+      "item1": "Desain khas Bandung yang tidak ditemukan di brand lain.",
+      "item2": "Elemen budaya lokal yang kuat: frasa Sunda, ikon kota, dan tema sejarah Bandung.",
+      "item3": "Akses digital yang memudahkan wisatawan untuk membeli.",
+      "item4": "Kemasan ramah lingkungan yang sejalan dengan nilai budaya."
+    },
+    "longTermGoal": {
+      "title": "Long-term Goal",
+      "item1": "Menjadi brand oleh-oleh Bandung yang dikenal secara global.",
+      "item2": "Ekspansi produk ke tote bag, hoodie, dan merchandise lainnya.",
+      "item3": "Membuka flagship store di lokasi strategis Bandung."
+    },
+    "cta": {
+      "title": "Siap lihat produk kami?",
+      "button": "Lihat Katalog"
+    }
   },
   "home": {
     "hero": {
@@ -125,6 +213,18 @@
       "title": "Siap Bikin Kaos Impianmu?",
       "description": "3 langkah mudah: Pilih - Desain - Pesan. Gampang, kan?",
       "button": "Yuk, Cobain Sekarang!"
+    },
+    "differentiation": {
+      "title": "Apa yang Bikin Kaos EUY! Berbeda",
+      "subtitle": "Empat alasan jelas kenapa orang memilih kami untuk kaos oleh-oleh Bandung.",
+      "item1Title": "Desain Khas Bandung",
+      "item1Description": "Desain terinspirasi visual dan karakter Bandung yang tidak kamu temukan di toko oleh-oleh umum.",
+      "item2Title": "Budaya Lokal yang Kuat",
+      "item2Description": "Frasa Sunda, ikon kota, dan tema sejarah Bandung hadir nyata di koleksi kami.",
+      "item3Title": "Akses Online + Offline",
+      "item3Description": "Mudah dipesan lewat kanal digital sekaligus tersedia di titik layanan offline.",
+      "item4Title": "Kemasan Ramah Lingkungan",
+      "item4Description": "Material kemasan dipilih untuk mengurangi limbah tanpa mengorbankan kualitas dan presentasi produk."
     },
     "featured": {
       "title": "Koleksi Terbaru",
@@ -356,5 +456,78 @@
     "submitButton": "Kirim Permintaan",
     "submitting": "Mengirim...",
     "footerNote": "Tim kami akan menghubungimu dalam 24 jam dengan penawaran khusus"
+  },
+  "contactPage": {
+    "title": "Hubungi Kaos EUY!",
+    "subtitle": "Punya pertanyaan soal produk, custom, atau bantuan pesanan? Hubungi kami lewat channel berikut.",
+    "intro": "Tim kami siap membantu untuk size, arahan desain, sampai follow-up pesanan.",
+    "whatsappLabel": "WhatsApp",
+    "emailLabel": "Email",
+    "hoursLabel": "Jam Layanan",
+    "locationLabel": "Lokasi",
+    "hoursValue": "Setiap hari, 09.00 - 21.00 WIB",
+    "locationValue": "Bandung, Jawa Barat, Indonesia",
+    "catalogCta": "Lihat Katalog",
+    "lookupCta": "Lacak Pesanan"
+  },
+  "sizeGuidePage": {
+    "title": "Panduan Ukuran",
+    "subtitle": "Pilih ukuran yang paling pas sebelum checkout.",
+    "note": "Semua ukuran dalam sentimeter dan dapat berbeda 1-2 cm karena toleransi produksi.",
+    "table": {
+      "size": "Ukuran",
+      "chest": "Lebar Dada",
+      "length": "Panjang Badan",
+      "shoulder": "Lebar Bahu"
+    },
+    "tipsTitle": "Cara Ukur",
+    "tip1": "Bentangkan kaos favoritmu di atas meja.",
+    "tip2": "Ukur lebar dada dari ketiak kiri ke ketiak kanan.",
+    "tip3": "Ukur panjang badan dari pundak atas ke ujung bawah kaos.",
+    "tip4": "Kalau ragu di antara dua ukuran, pilih satu tingkat lebih besar untuk fit santai.",
+    "helpTitle": "Butuh rekomendasi ukuran khusus?",
+    "helpCta": "Hubungi Kami"
+  },
+  "faqPage": {
+    "title": "Pertanyaan yang Sering Ditanyakan",
+    "subtitle": "Jawaban cepat seputar order, custom, dan pengiriman.",
+    "q1Title": "Minimal order berapa?",
+    "q1Answer": "Bisa mulai dari 1 pcs untuk pesanan personal. Untuk jumlah besar tersedia skema pesanan bulk.",
+    "q2Title": "Berapa lama proses produksi?",
+    "q2Answer": "Produksi standar sekitar 7-10 hari, tergantung jumlah pesanan dan kompleksitas desain.",
+    "q3Title": "Bisa upload desain sendiri?",
+    "q3Answer": "Bisa. Kamu dapat upload file desain dan menempatkannya di posisi cetak yang tersedia.",
+    "q4Title": "Metode pembayaran apa saja?",
+    "q4Answer": "Pembayaran tersedia melalui channel Duitku yang muncul saat checkout.",
+    "q5Title": "Bisa beli online dan offline?",
+    "q5Answer": "Bisa. Pembelian tersedia secara online, dan di titik layanan offline tertentu.",
+    "q6Title": "Cara lacak pesanan gimana?",
+    "q6Answer": "Gunakan halaman Lacak Pesanan dengan order ID, email, dan lookup token kamu.",
+    "contactPrompt": "Masih butuh bantuan?",
+    "contactCta": "Ke Halaman Kontak"
+  },
+  "termsPage": {
+    "title": "Syarat & Ketentuan",
+    "subtitle": "Silakan baca ketentuan ini sebelum membuat pesanan.",
+    "updatedLabel": "Terakhir Diperbarui",
+    "updatedDate": "11 Februari 2026",
+    "section1Title": "1. Kesepakatan Pemesanan",
+    "section1Body": "Dengan membuat pesanan di Kaos EUY!, kamu setuju memberikan data yang benar dan mengikuti alur pemesanan di website ini.",
+    "section2Title": "2. Produk & Kustomisasi",
+    "section2Item1": "Warna dan hasil cetak dapat sedikit berbeda antara layar dan hasil produksi.",
+    "section2Item2": "Pelanggan bertanggung jawab atas konten desain yang diunggah dan hak penggunaannya.",
+    "section2Item3": "Produk custom tidak dapat dibatalkan setelah proses produksi dimulai.",
+    "section3Title": "3. Pembayaran",
+    "section3Item1": "Pesanan diproses setelah pembayaran berhasil dibuat/dikonfirmasi.",
+    "section3Item2": "Channel pembayaran disediakan mitra terintegrasi dan dapat berubah tanpa pemberitahuan sebelumnya.",
+    "section3Item3": "Masalah pembayaran harus segera dilaporkan melalui channel support kami.",
+    "section4Title": "4. Produksi & Pengiriman",
+    "section4Item1": "Estimasi waktu produksi bersifat informatif dan dapat berubah pada periode ramai.",
+    "section4Item2": "Durasi pengiriman mengikuti tujuan dan layanan kurir.",
+    "section4Item3": "Detail pelacakan akan dibagikan setelah tersedia.",
+    "section5Title": "5. Retur & Komplain",
+    "section5Body": "Jika ada cacat produksi atau barang tidak sesuai, hubungi kami dengan bukti maksimal 2x24 jam setelah produk diterima.",
+    "section6Title": "6. Kontak",
+    "section6Body": "Untuk pertanyaan layanan atau hal terkait ketentuan, hubungi kami melalui halaman Kontak."
   }
 }

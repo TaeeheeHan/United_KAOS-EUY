@@ -28,7 +28,7 @@ const pacifico = Pacifico({
 });
 
 export const metadata: Metadata = {
-  title: 'Kaos EUY! - Bandung\'s Pride, Your Style',
+  title: "Kaos EUY! - Looking for Bandung souvenir T-shirts? EUY!",
   description: 'Kaos premium dengan sentuhan khas Bandung. Custom mudah, kualitas juara.',
   keywords: 'kaos bandung, custom kaos, kaos premium, sablon kaos, kaos euy',
 };

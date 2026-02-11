@@ -1,6 +1,6 @@
 # Kaos EUY! - Project Manual
 
-**Bandung's Pride, Your Style**
+**Looking for Bandung souvenir T-shirts? EUY!**
 
 A premium custom t-shirt ordering platform featuring Bandung's culture and identity.
 
