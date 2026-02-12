@@ -25,12 +25,11 @@ echo ""
 echo "[1/3] Starting Supabase ..."
 npx --yes supabase start
 
-# 4. Run migrations & seed admin
+# 4. Run migrations & seed data
 echo ""
-echo "[2/3] Running migrations & seeding admin ..."
+echo "[2/3] Running migrations & seed data ..."
 npx --yes supabase db reset
 npm install --silent
-node scripts/seed-admin.mjs 2>/dev/null || true
 
 # 5. Build & start Next.js via Docker Compose
 echo ""

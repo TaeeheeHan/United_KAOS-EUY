@@ -10,8 +10,7 @@
     "supabase:start": "npx --yes supabase start",
     "supabase:stop": "npx --yes supabase stop --no-backup",
     "supabase:status": "npx --yes supabase status",
-    "supabase:seed-admin": "node scripts/seed-admin.mjs",
-    "supabase:reset": "npx --yes supabase db reset && npm run supabase:seed-admin",
+    "supabase:reset": "npx --yes supabase db reset",
     "supabase:migrate": "npx --yes supabase migration up",
     "supabase:types": "npx --yes supabase gen types typescript --local > src/lib/supabase/database.types.ts"
   },

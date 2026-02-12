@@ -178,8 +178,6 @@ United_KAOS-EUY/
 │   ├── migrations/                   # Database migrations (8 files)
 │   ├── seed.sql                      # Initial seed data
 │   └── config.toml                   # Local Supabase config
-├── scripts/
-│   └── seed-admin.mjs                # Admin account seeder
 ├── Dockerfile                        # Multi-stage Docker build
 ├── docker-compose.yml                # Docker Compose config
 ├── .dockerignore                     # Docker build exclusions
